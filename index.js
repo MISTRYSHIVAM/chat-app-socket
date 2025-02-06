@@ -1,6 +1,6 @@
 import { Server } from "socket.io";
 
-const io = new Server({ cors: '*' });
+const io = new Server({ cors: 'http://localhost:4200' });
 
 let users = [];
 function addUser(user, socketId) {
