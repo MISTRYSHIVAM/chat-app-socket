@@ -60,7 +60,7 @@ io.on("connection", (socket) => {
         })
         // after connection take userId and socketId and store
         socket.on("privateMessage", (messageData) => {
-            // getUsers();
+            getUsers();
             // console.log(messageData);
             let receiverSocketId = findUser(messageData.sendTo._id);
             // console.log(receiverSocketId);
