@@ -52,7 +52,7 @@ io.on("connection", (socket) => {
             socket.emit('onlineUser', getOnlineUser());
         }, 10000)
 
-        socket.on("disconnect", (so) => {
+        socket.on("disconnect", (socket) => {
             // console.log(socket)
             console.log("Disconnected!....");
             removeUser(socket.id)
