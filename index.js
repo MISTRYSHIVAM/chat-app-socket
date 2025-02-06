@@ -1,6 +1,6 @@
 import { Server } from "socket.io";
 
-const io = new Server({ cors: 'http://localhost:5555/' });
+const io = new Server({ cors: '*' });
 
 let users = [];
 function addUser(user, socketId) {
@@ -60,6 +60,7 @@ io.on("connection", (socket) => {
         })
         // after connection take userId and socketId and store
         socket.on("privateMessage", (messageData) => {
+            // getUsers();
             // console.log(messageData);
             let receiverSocketId = findUser(messageData.sendTo._id);
             // console.log(receiverSocketId);
